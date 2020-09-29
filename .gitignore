@@ -1,6 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .ipynb_checkpoints/*
 
 =======
 .ipynb_checkpoints/*
 >>>>>>> 209a961b74e9a4279c64c430cfe851b65c262dc4
+=======
+.ipynb_checkpoints/*
+*/.ipynb_checkpoints/*
+Session 5/results/*
+>>>>>>> e8a0fdd3465b2d05e2c1e753306d3a8727bf7d38
