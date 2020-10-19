@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Oct 19 12:17:44 2020
+
+@author: EDSE-dariamck-workspace
+"""
+
+#Import the necessary libraries 	
+import os
+from email.parser import Parser
+
+rootdir = "/home/EDSE-dariamck-workspace/Enron_dataset/maildir/lay-k/family"
+date_dict={}
+
+def email_analyse(inputfile, to_email_dict, from_email_dict, date_dict):
+    with open(inputfile, "r") as f:
+        data = f.read()
+    
+    email = Parser().parsestr(data)
+    
+    to_email_dict["to"] = email['to']
+    date_dict["date"] = email['date']
+    from_email_dict["from"] = email['from']
+
+    
+#empty lists to structure the data!!!
+to_email_dict = {}
+from_email_dict = {}
+date_dict = {}
+
+
+'''
+PART 1: Use Helper Function to move data from unstructured email form to 
+structured form
+'''
+
+print ("moving data to new structures")
+for directory, subdirectory, filenames in  os.walk(rootdir):
+    for filename in filenames:
+        #uses the root directory
+        #see files
+
+        email_analyse(os.path.join(directory, filename), to_email_dict, from_email_dict, date_dict)
+
+print(date_dict)
